@@ -3,7 +3,7 @@ import { useExpenses, EnumOptions } from '../../hooks/useExpenses';
 import { useAuth } from 'react-oidc-context';
 import toast from 'react-hot-toast';
 import { ExpenseDto, UsersDictionary } from '../../types/expense';
-import { useResidenceStore } from '../../store/residenceStore';
+import { useResidenceStore } from '../../stores/residenceStore';
 
 
 const CreateExpenseForm = () => {

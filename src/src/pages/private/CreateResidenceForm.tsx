@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useResidences } from '../../hooks/useResidences';
 import { useAuth } from 'react-oidc-context';
 import { AddressDto, CreateResidenceDto } from '../../types/residence';
-import { useResidenceStore } from '../../store/residenceStore';
+import { useResidenceStore } from '../../stores/residenceStore';
 import toast from 'react-hot-toast';
 
 interface CreateResidenceFormProps {

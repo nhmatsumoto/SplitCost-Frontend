@@ -1,5 +1,5 @@
 import { useAuth } from 'react-oidc-context';
-import { useUserStore } from '../../store/userStore';
+import { useUserStore } from '../../stores/userStore';
 import { LogOut } from 'lucide-react';
 
 interface LogoutButtonProps {

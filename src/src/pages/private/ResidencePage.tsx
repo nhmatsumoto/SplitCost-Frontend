@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useResidenceStore } from "../../store/residenceStore";
+import { useResidenceStore } from "../../stores/residenceStore";
 
 const ResidencePage = () => {
     const residence = useResidenceStore(state => state.residence);

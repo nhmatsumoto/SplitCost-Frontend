@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useAuth } from 'react-oidc-context';
-import { useUserStore } from '../store/userStore';
+import { useUserStore } from '../stores/userStore';
 
 export const createApiClient = () => {
 

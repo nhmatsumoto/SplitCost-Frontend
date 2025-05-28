@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useAuth } from 'react-oidc-context';
 import { useResidences } from '../hooks/useResidences';
-import { useResidenceStore } from '../store/residenceStore';
+import { useResidenceStore } from '../stores/residenceStore';
 
 const AppInitializer = () => {
     const { isAuthenticated, user } = useAuth();
