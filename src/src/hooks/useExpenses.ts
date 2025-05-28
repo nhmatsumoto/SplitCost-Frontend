@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { createApiClient } from "../api/client";
-import { ExpenseDto, UsersDictionary } from "../types/expenseTypes";
-import { Result } from "../types/commonTypes";
+import { ExpenseDto, UsersDictionary } from "../types/expense";
+import { Result } from "../types/result";
 
 export interface EnumOptions {
   value: number;

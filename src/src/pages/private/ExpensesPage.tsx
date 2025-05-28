@@ -10,7 +10,7 @@ import {
   ColumnDef,
   SortingState,
 } from "@tanstack/react-table";
-import { ExpenseDto } from "../../types/expenseTypes";
+import { ExpenseDto } from "../../types/expense";
 
 const ExpensesPage = () => {
   const { get } = useExpenses();

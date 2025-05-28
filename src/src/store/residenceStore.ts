@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { ResidenceDto } from '../types/residenceTypes';
+import { ResidenceDto } from '../types/residence';
 
 interface ResidenceState {
   residence: ResidenceDto | null;

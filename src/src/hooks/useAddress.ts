@@ -1,16 +1,6 @@
 import { useCallback } from "react";
 import { createApiClient } from "../api/client";
-
-export interface AddressDto {
-  id: number;
-  street: string;
-  number: string;
-  apartment: string;
-  city: string;
-  prefecture: string;
-  country: string;
-  postalCode: string;
-}
+import { AddressDto } from "../types/residence";
 
 export const useAddress = () => {
 

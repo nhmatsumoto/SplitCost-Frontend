@@ -10,7 +10,7 @@ import CreateResidenceForm from '../pages/private/CreateResidenceForm';
 import CreateExpenseForm from '../pages/private/CreateExpenseForm';
 import TransactionsPage from '../pages/private/TransactionsPage';
 import IncomesPage from '../pages/private/IcomesPage';
-import AppInitializer from '../components/auth/AppInitializer';
+import AppInitializer from '../components/AppInitializer';
 
 const AppRoutes = () => {
   return (

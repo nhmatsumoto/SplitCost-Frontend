@@ -1,14 +1,6 @@
 import { useCallback } from 'react';
 import { createApiClient } from '../api/client';
-
-export interface RegisterUserDto {
-  Username: string;
-  FirstName: string;
-  LastName: string;
-  Email: string;
-  Password?: string;
-  ConfirmPassword?: string;
-}
+import { RegisterUserDto } from '../types/user';
 
 export const useAppUser = () => {
 

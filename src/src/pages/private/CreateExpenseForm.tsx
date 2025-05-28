@@ -2,16 +2,11 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useExpenses, EnumOptions } from '../../hooks/useExpenses';
 import { useAuth } from 'react-oidc-context';
 import toast from 'react-hot-toast';
-import { ExpenseDto, UsersDictionary } from '../../types/expenseTypes';
+import { ExpenseDto, UsersDictionary } from '../../types/expense';
 import { useResidenceStore } from '../../store/residenceStore';
 
-interface CreateExpenseFormProps {
-  residenceId: string;
-  onSuccess?: () => void;
-  onError?: (message: string) => void;
-}
 
-const CreateExpenseForm = ({ residenceId, onSuccess, onError }: CreateExpenseFormProps) => {
+const CreateExpenseForm = () => {
   const [type, setType] = useState<number>();
   const [category, setCategory] = useState<number>();
   const [amount, setAmount] = useState<number>(0);
@@ -30,13 +25,18 @@ const CreateExpenseForm = ({ residenceId, onSuccess, onError }: CreateExpenseFor
   const residence = useResidenceStore((state) => state.residence);
 
   const userId = user?.profile?.sub;
+  const residenceId = residence?.id;
 
   const loadOptions = async () => {
       try {
+        if (!residence?.id && !residenceId) {
+          throw new Error('ID da residência não informado.');
+        }
+        const validResidenceId = residence?.id || residenceId;
         const [types, categories, users] = await Promise.all([
           getTypes(),
           getCategories(),
-          getUsers(residence?.id || residenceId)
+          getUsers(validResidenceId as string)
         ]);
 
         setTypeOptions(types);
@@ -82,7 +82,6 @@ const CreateExpenseForm = ({ residenceId, onSuccess, onError }: CreateExpenseFor
       try {
         await create(payload);
         toast.success('Despesa registrada com sucesso!');
-        onSuccess?.();
         // Reset
         setType(undefined);
         setCategory(undefined);
@@ -94,12 +93,11 @@ const CreateExpenseForm = ({ residenceId, onSuccess, onError }: CreateExpenseFor
       } catch (err: any) {
         const errorMessage = err?.response?.data?.message || 'Erro ao registrar despesa.';
         toast.error(errorMessage);
-        onError?.(errorMessage);
       } finally {
         setLoading(false);
       }
     },
-    [type, category, amount, date, description, isShared, sharedWithUserIds, residenceId, userId, create, onSuccess, onError]
+    [type, category, amount, date, description, isShared, sharedWithUserIds, residenceId, userId, create]
   );
 
   return (
