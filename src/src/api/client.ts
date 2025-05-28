@@ -5,11 +5,10 @@ import { useUserStore } from '../stores/userStore';
 export const createApiClient = () => {
 
   const { isAuthenticated, user } = useAuth();
-
   const setUser = useUserStore((state) => state.setUser);
 
   const api = axios.create({
-    baseURL: 'https://localhost:7041/api',
+    baseURL: import.meta.env.VITE_BACKEND_API_URL,
   });
 
   api.interceptors.request.use((config) => {

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-type User = {
+type UserSelector = {
   id: string;
   name: string;
-};
+}
 
-const mockUsers: User[] = [
+const mockUsers: UserSelector[] = [
   { id: '1', name: "Alice" },
   { id: '2', name: "Bob" },
   { id: '3', name: "Charlie" },
@@ -14,7 +14,7 @@ const mockUsers: User[] = [
 
 const UserSelector = () => {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [selectedUsers, setSelectedUsers] = useState<User[]>([]);
+  const [selectedUsers, setSelectedUsers] = useState<UserSelector[]>([]);
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setShowDropdown(e.target.checked);

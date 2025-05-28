@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { ArrowRightLeftIcon, BanknoteArrowUpIcon, HouseIcon, JapaneseYen, UserPlusIcon, WalletIcon, ChevronDownIcon, ChevronUpIcon, Coins } from 'lucide-react';
+import { ArrowRightLeftIcon, BanknoteArrowUpIcon, HouseIcon, UserPlusIcon, WalletIcon, ChevronDownIcon, ChevronUpIcon, Coins } from 'lucide-react';
 import { useAuth } from 'react-oidc-context';
 
 interface LinkItem {

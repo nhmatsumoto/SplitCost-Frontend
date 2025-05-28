@@ -11,8 +11,6 @@ const AppInitializer = () => {
 
     useEffect(() => {
         if (isAuthenticated && user) {
-            
-
             // verificar o que está acontecendo com o residence que está fazendo multiplos requests periodicamente 
             if(!residence){
                 const residenceData =  getByUserId(user.profile.sub);
