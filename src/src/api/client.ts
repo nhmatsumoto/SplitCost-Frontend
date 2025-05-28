@@ -19,6 +19,7 @@ export const createApiClient = () => {
     return config;
   });
 
+  // Criar tratamento global para result pattern
   api.interceptors.response.use(
     (response) => response,
     (error) => {
